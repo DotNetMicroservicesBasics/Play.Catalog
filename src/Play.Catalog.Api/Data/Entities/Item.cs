@@ -2,7 +2,7 @@ using System;
 
 namespace Play.Catalog.Data.Entities
 {
-    public class Item
+    public class Item : IEntity
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyGitHubRepos\\play.catalog\\src\\Play.Catalog.Api\\Play.Catalog.Api.csproj": {}
+    "D:\\MyGitHubRepos\\Play.Catalog\\src\\Play.Catalog.Api\\Play.Catalog.Api.csproj": {}
   },
   "projects": {
-    "D:\\MyGitHubRepos\\play.catalog\\src\\Play.Catalog.Api\\Play.Catalog.Api.csproj": {
+    "D:\\MyGitHubRepos\\Play.Catalog\\src\\Play.Catalog.Api\\Play.Catalog.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyGitHubRepos\\play.catalog\\src\\Play.Catalog.Api\\Play.Catalog.Api.csproj",
+        "projectUniqueName": "D:\\MyGitHubRepos\\Play.Catalog\\src\\Play.Catalog.Api\\Play.Catalog.Api.csproj",
         "projectName": "Play.Catalog.Api",
-        "projectPath": "D:\\MyGitHubRepos\\play.catalog\\src\\Play.Catalog.Api\\Play.Catalog.Api.csproj",
+        "projectPath": "D:\\MyGitHubRepos\\Play.Catalog\\src\\Play.Catalog.Api\\Play.Catalog.Api.csproj",
         "packagesPath": "C:\\Users\\yasse\\.nuget\\packages\\",
-        "outputPath": "D:\\MyGitHubRepos\\play.catalog\\src\\Play.Catalog.Api\\obj\\",
+        "outputPath": "D:\\MyGitHubRepos\\Play.Catalog\\src\\Play.Catalog.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yasse\\AppData\\Roaming\\NuGet\\NuGet.Config",

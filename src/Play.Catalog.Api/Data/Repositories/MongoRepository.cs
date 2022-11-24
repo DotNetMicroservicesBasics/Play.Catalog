@@ -5,32 +5,31 @@ using Play.Catalog.Data.Entities;
 namespace Play.Catalog.Data.Repositories
 {
 
-    public class ItemsRepository : IItemsRepository
+    public class MongoRepository<T> : IRepository<T> where T : IEntity
     {
-        private const string CollectionName = "Items";
-        private readonly IMongoCollection<Item> _dbCollection;
+        private readonly IMongoCollection<T> _dbCollection;
 
-        private readonly FilterDefinitionBuilder<Item> _filterBuilder = Builders<Item>.Filter;
+        private readonly FilterDefinitionBuilder<T> _filterBuilder = Builders<T>.Filter;
 
-        public ItemsRepository(IMongoDatabase database)
+        public MongoRepository(IMongoDatabase database, string collectionName)
         {
             // var mongoClient = new MongoClient("mongodb://localhost:27017");
             // var database = mongoClient.GetDatabase("Catalog");
-            _dbCollection = database.GetCollection<Item>(CollectionName);
+            _dbCollection = database.GetCollection<T>(collectionName);
         }
 
-        public async Task<IReadOnlyCollection<Item>> GetAllAsync()
+        public async Task<IReadOnlyCollection<T>> GetAllAsync()
         {
             return await _dbCollection.Find(_filterBuilder.Empty).ToListAsync();
         }
 
-        public async Task<Item> GetAsync(Guid id)
+        public async Task<T> GetAsync(Guid id)
         {
             var filter = _filterBuilder.Eq(i => i.Id, id);
             return await _dbCollection.Find(filter).FirstOrDefaultAsync();
         }
 
-        public async Task CreateAsync(Item entity)
+        public async Task CreateAsync(T entity)
         {
             if (entity == null)
             {
@@ -39,7 +38,7 @@ namespace Play.Catalog.Data.Repositories
             await _dbCollection.InsertOneAsync(entity);
         }
 
-        public async Task UpdateAsync(Item entity)
+        public async Task UpdateAsync(T entity)
         {
             var filter = _filterBuilder.Eq(i => i.Id, entity.Id);
             await _dbCollection.ReplaceOneAsync(filter, entity);

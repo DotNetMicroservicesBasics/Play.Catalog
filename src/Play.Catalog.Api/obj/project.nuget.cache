@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Xa4NueMqMSzSRZ3fJOtRjoMJrdmFh8/f+u6aiEUw451foOk8IS1uVkWKoU6cDnKeorWx1AeqbFangx6xUBAsyg==",
+  "dgSpecHash": "zEPnFs201DeUY0ukrZeT9JbnpXmJ0/j3BJsorvsVr53WlH1JBHsZ5DpUnyPiqwqyXFkDHar324L2ZWz0wvM5Mg==",
   "success": true,
-  "projectFilePath": "D:\\MyGitHubRepos\\play.catalog\\src\\Play.Catalog.Api\\Play.Catalog.Api.csproj",
+  "projectFilePath": "D:\\MyGitHubRepos\\Play.Catalog\\src\\Play.Catalog.Api\\Play.Catalog.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yasse\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\yasse\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
