@@ -1,4 +1,5 @@
 using System;
+using Play.Common.Contracts.Interfaces;
 
 namespace Play.Catalog.Data.Entities
 {

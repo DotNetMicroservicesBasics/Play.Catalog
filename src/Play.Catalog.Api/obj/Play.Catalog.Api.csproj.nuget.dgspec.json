@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyGitHubRepos\\Play.Catalog\\src\\Play.Catalog.Api\\Play.Catalog.Api.csproj": {}
+    "D:\\Dev\\MyGitHubRepos\\Play\\Play.Catalog\\src\\Play.Catalog.Api\\Play.Catalog.Api.csproj": {}
   },
   "projects": {
-    "D:\\MyGitHubRepos\\Play.Catalog\\src\\Play.Catalog.Api\\Play.Catalog.Api.csproj": {
+    "D:\\Dev\\MyGitHubRepos\\Play\\Play.Catalog\\src\\Play.Catalog.Api\\Play.Catalog.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyGitHubRepos\\Play.Catalog\\src\\Play.Catalog.Api\\Play.Catalog.Api.csproj",
+        "projectUniqueName": "D:\\Dev\\MyGitHubRepos\\Play\\Play.Catalog\\src\\Play.Catalog.Api\\Play.Catalog.Api.csproj",
         "projectName": "Play.Catalog.Api",
-        "projectPath": "D:\\MyGitHubRepos\\Play.Catalog\\src\\Play.Catalog.Api\\Play.Catalog.Api.csproj",
+        "projectPath": "D:\\Dev\\MyGitHubRepos\\Play\\Play.Catalog\\src\\Play.Catalog.Api\\Play.Catalog.Api.csproj",
         "packagesPath": "C:\\Users\\yasse\\.nuget\\packages\\",
-        "outputPath": "D:\\MyGitHubRepos\\Play.Catalog\\src\\Play.Catalog.Api\\obj\\",
+        "outputPath": "D:\\Dev\\MyGitHubRepos\\Play\\Play.Catalog\\src\\Play.Catalog.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yasse\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Dev\\NugetPackages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,9 +41,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "MongoDB.Driver": {
+            "Play.Common": {
               "target": "Package",
-              "version": "[2.18.0, )"
+              "version": "[1.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

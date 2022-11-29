@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Play.Catalog.Contracts.Dtos;
 using Play.Catalog.Data.Entities;
-using Play.Catalog.Data.Repositories;
 using Play.Catalog.Service;
+using Play.Common.Contracts.Interfaces;
 
 namespace Play.Catalog.Api.Controllers
 {

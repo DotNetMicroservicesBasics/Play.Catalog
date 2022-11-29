@@ -1,6 +1,5 @@
-using MongoDB.Driver;
 using Play.Catalog.Data.Entities;
-using Play.Catalog.Data.Repositories;
+using Play.Common.Data;
 
 namespace Play.Catalog.Api;
 
