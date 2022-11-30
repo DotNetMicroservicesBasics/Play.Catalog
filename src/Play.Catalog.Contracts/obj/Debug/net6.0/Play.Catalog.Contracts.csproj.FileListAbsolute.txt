@@ -1,0 +1,12 @@
+D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Contracts\bin\Debug\net6.0\Play.Catalog.Contracts.deps.json
+D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Contracts\bin\Debug\net6.0\Play.Catalog.Contracts.dll
+D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Contracts\bin\Debug\net6.0\Play.Catalog.Contracts.pdb
+D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Contracts\obj\Debug\net6.0\Play.Catalog.Contracts.csproj.AssemblyReference.cache
+D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Contracts\obj\Debug\net6.0\Play.Catalog.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Contracts\obj\Debug\net6.0\Play.Catalog.Contracts.AssemblyInfoInputs.cache
+D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Contracts\obj\Debug\net6.0\Play.Catalog.Contracts.AssemblyInfo.cs
+D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Contracts\obj\Debug\net6.0\Play.Catalog.Contracts.csproj.CoreCompileInputs.cache
+D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Contracts\obj\Debug\net6.0\Play.Catalog.Contracts.dll
+D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Contracts\obj\Debug\net6.0\refint\Play.Catalog.Contracts.dll
+D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Contracts\obj\Debug\net6.0\Play.Catalog.Contracts.pdb
+D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Contracts\obj\Debug\net6.0\ref\Play.Catalog.Contracts.dll

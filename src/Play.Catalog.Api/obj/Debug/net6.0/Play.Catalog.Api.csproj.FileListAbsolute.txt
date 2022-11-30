@@ -119,3 +119,12 @@ D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Api\obj\Debug\net6.0\sco
 D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Api\obj\Debug\net6.0\Play.Catalog.Api.csproj.CopyComplete
 D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Api\obj\Debug\net6.0\Play.Catalog.Api.genruntimeconfig.cache
 D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Api\obj\Debug\net6.0\ref\Play.Catalog.Api.dll
+D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Api\bin\Debug\net6.0\MassTransit.dll
+D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Api\bin\Debug\net6.0\MassTransit.Abstractions.dll
+D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Api\bin\Debug\net6.0\MassTransit.AspNetCoreIntegration.dll
+D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Api\bin\Debug\net6.0\MassTransit.ExtensionsDependencyInjectionIntegration.dll
+D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Api\bin\Debug\net6.0\MassTransit.RabbitMqTransport.dll
+D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Api\bin\Debug\net6.0\RabbitMQ.Client.dll
+D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Api\bin\Debug\net6.0\System.Text.Json.dll
+D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Api\bin\Debug\net6.0\Play.Catalog.Contracts.dll
+D:\Dev\MyGitHubRepos\Play\Play.Catalog\src\Play.Catalog.Api\bin\Debug\net6.0\Play.Catalog.Contracts.pdb
