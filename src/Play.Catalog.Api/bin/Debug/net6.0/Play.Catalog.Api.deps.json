@@ -8,10 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "Play.Catalog.Api/1.0.0": {
         "dependencies": {
-          "MassTransit.AspNetCore": "7.3.1",
-          "MassTransit.RabbitMQ": "8.0.8",
           "Play.Catalog.Contracts": "1.0.0",
-          "Play.Common": "1.0.0",
+          "Play.Common": "1.0.2",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
@@ -272,8 +270,10 @@
           }
         }
       },
-      "Play.Common/1.0.0": {
+      "Play.Common/1.0.2": {
         "dependencies": {
+          "MassTransit.AspNetCore": "7.3.1",
+          "MassTransit.RabbitMQ": "8.0.8",
           "Microsoft.Extensions.Configuration": "7.0.0",
           "Microsoft.Extensions.Configuration.Binder": "7.0.0",
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
@@ -590,12 +590,12 @@
       "path": "mongodb.libmongocrypt/1.6.0",
       "hashPath": "mongodb.libmongocrypt.1.6.0.nupkg.sha512"
     },
-    "Play.Common/1.0.0": {
+    "Play.Common/1.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-4O0r7STDhXleHTumxBVpB658l0LSvcgn/tcfRJ3yRmG5oinfa+JzcmB9max+W7j5i4hV+BahGfj8PFqoEvef7w==",
-      "path": "play.common/1.0.0",
-      "hashPath": "play.common.1.0.0.nupkg.sha512"
+      "sha512": "sha512-/oK4sb8RsWihcNsg/XUFizmbhrHr78XxJQL/7Dxe/VTyUcX97l6WXp+XjXE+equSte6g4zlh0SAgKVQDMlJ1WQ==",
+      "path": "play.common/1.0.2",
+      "hashPath": "play.common.1.0.2.nupkg.sha512"
     },
     "RabbitMQ.Client/6.4.0": {
       "type": "package",

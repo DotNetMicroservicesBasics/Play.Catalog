@@ -6,10 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>    
-    <PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />    
-    <PackageReference Include="MassTransit.RabbitMQ" Version="8.0.8" />    
-    <PackageReference Include="Play.Common" Version="1.0.0" />    
+  <ItemGroup>     
+    <PackageReference Include="Play.Common" Version="1.0.2" />    
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
