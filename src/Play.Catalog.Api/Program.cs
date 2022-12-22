@@ -1,5 +1,8 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Play.Catalog.Api.Security;
 using Play.Catalog.Data.Entities;
 using Play.Common.Data;
+using Play.Common.Identity;
 using Play.Common.MassTansit;
 using Play.Common.Settings;
 
@@ -11,14 +14,23 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        var allowedOriginSettingsKey = "AllowedOrigins";
+
         var serviceSettings = builder.Configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
 
         // Add services to the container
+
 
         builder.Services.AddMongoDb()
                         .AddMongoRepository<Item>("Items");
 
         builder.Services.AddMassTransitWithRabbitMq();
+
+        builder.Services.AddJwtBearerAuthentication();
+
+        builder.Services.ConfigureOptions<ConfigureAuthorizationOptions>()
+                        .AddAuthorization();
+
 
         builder.Services.AddControllers(options =>
         {
@@ -37,9 +49,17 @@ public class Program
         {
             app.UseSwagger();
             app.UseSwaggerUI();
+            app.UseCors(corsBuilder =>
+            {
+                corsBuilder.WithOrigins(builder.Configuration[allowedOriginSettingsKey])
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+            });
         }
 
         app.UseHttpsRedirection();
+
+        app.UseAuthentication();
 
         app.UseAuthorization();
 
