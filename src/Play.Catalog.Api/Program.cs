@@ -24,7 +24,7 @@ public class Program
         builder.Services.AddMongoDb()
                         .AddMongoRepository<Item>("Items");
 
-        builder.Services.AddMassTransitWithRabbitMq();
+        builder.Services.AddMassTransitWithMesageBroker(builder.Configuration);
 
         builder.Services.AddJwtBearerAuthentication();
 
