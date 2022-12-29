@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Play.Catalog.Api.Security;
 using Play.Catalog.Data.Entities;
 using Play.Common.Data;
+using Play.Common.HealthChecks;
 using Play.Common.Identity;
 using Play.Common.MassTansit;
 using Play.Common.Settings;
@@ -42,6 +43,9 @@ public class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
+        builder.Services.AddHealthChecks()
+                        .AddMongo();
+
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
@@ -65,6 +69,8 @@ public class Program
 
 
         app.MapControllers();
+
+        app.MapPlayEconomyHealthChecks();
 
         app.Run();
     }
