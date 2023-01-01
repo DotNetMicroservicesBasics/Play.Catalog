@@ -4,7 +4,7 @@ Play Economy Catalog microservice
 ## Create and publish package
 ```powershell
 
-$version="1.0.4"
+$version="1.0.5"
 $owner="DotNetMicroservicesBasics"
 $local_packages_path="D:\Dev\NugetPackages"
 $gh_pat="PAT HERE"

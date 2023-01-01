@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Play.Catalog.Api.Security;
 using Play.Catalog.Data.Entities;
+using Play.Common.Configuration;
 using Play.Common.Data;
 using Play.Common.HealthChecks;
 using Play.Common.Identity;
@@ -14,6 +15,11 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+
+        if (builder.Environment.IsProduction())
+        {
+            builder.Configuration.ConfigureAzureKeyVault();
+        }
 
         var allowedOriginSettingsKey = "AllowedOrigins";
 
