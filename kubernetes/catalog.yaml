@@ -1,0 +1,9 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: playcatalog-serviceaccount
+  annotations: 
+    azure.workload.identity/client-id: 34f9a483-a547-4883-836d-207123c44056
+  labels:
+    azure.workload.identity/use: "true"
