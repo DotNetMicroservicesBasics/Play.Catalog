@@ -57,7 +57,7 @@ kubectl apply -f .\kubernetes\catalog.yaml -n $namespace
 kubectl get pods -n $namespace -w
 
 # output pod logs
-$podname="playcatalog-deployement-5988997548-vr4xx"
+$podname="playcatalog-deployement-6fb5b7b855-kvkxj"
 kubectl logs $podname -n $namespace
 
 # list pod details
@@ -78,7 +78,7 @@ kubectl get deployments -n $namespace
 # delete deployment
 kubectl delete deployment playcatalog-deployement -n $namespace
 
-# delete deployment
+# delete service
 kubectl delete service playcatalog-service -n $namespace
 
 # delete service account
