@@ -1,0 +1,10 @@
+microserviceName: playcatalog
+
+image: 
+  repository: playeconomyazurecontainerregistry.azurecr.io/play.catalog
+  tag: 1.0.6
+
+container:
+  port: 5169
+
+identityClientId: 34f9a483-a547-4883-836d-207123c44056

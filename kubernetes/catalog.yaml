@@ -1,3 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: playcatalog-deployement
+spec:
+  selector:
+    matchLabels:
+      app: playcatalog
+  template:
+    metadata:
+      labels:
+        app: playcatalog
+    spec:
+      serviceAccountName: playcatalog-serviceaccount
+      containers:
+        - name: playcatalog
+          image: playeconomyazurecontainerregistry.azurecr.io/play.catalog:1.0.6
+          env:
+            - name: ServiceSettings__MessageBroker
+              value: AZURESERVICEBUS
+            - name: ServiceSettings__KeyVaultName
+              value: playeconomyazurekeyvault
+            - name: IdentitySettings__Authority
+              value: https://playeconomygateway.eastus.cloudapp.azure.com/identity-svc           
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+          ports:
+            - containerPort: 5169
+          livenessProbe:
+            httpGet:
+              path: /health/live
+              port: 5169
+            initialDelaySeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /health/ready
+              port: 5169
+            initialDelaySeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: playcatalog-service
+spec:
+  type: ClusterIP
+  selector:
+    app: playcatalog
+  ports:
+  - port: 80
+    targetPort: 5169
 ---
 apiVersion: v1
 kind: ServiceAccount

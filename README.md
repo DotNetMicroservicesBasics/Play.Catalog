@@ -4,7 +4,7 @@ Play Economy Catalog microservice
 ## Create and publish package
 ```powershell
 
-$version="1.0.5"
+$version="1.0.6"
 $owner="DotNetMicroservicesBasics"
 $local_packages_path="D:\Dev\NugetPackages"
 $gh_pat="PAT HERE"
@@ -57,17 +57,32 @@ kubectl apply -f .\kubernetes\catalog.yaml -n $namespace
 kubectl get pods -n $namespace -w
 
 # output pod logs
-$podname="playcatalog-deployement-579757ccbd-zfm7w"
+$podname="playcatalog-deployement-5988997548-vr4xx"
 kubectl logs $podname -n $namespace
 
 # list pod details
 kubectl describe pod $podname -n $namespace
+
+# delete pod
+kubectl delete pod $podname -n $namespace
 
 # list services (see puplic ip)
 kubectl get services -n $namespace
 
 # see events
 kubectl get events -n $namespace
+
+# list deployments
+kubectl get deployments -n $namespace
+
+# delete deployment
+kubectl delete deployment playcatalog-deployement -n $namespace
+
+# delete deployment
+kubectl delete service playcatalog-service -n $namespace
+
+# delete service account
+kubectl delete serviceaccount playcatalog-serviceaccount -n $namespace
 ```
 
 ## Create Azure Managed Identity and granting it access to Key Vault secrets
@@ -86,4 +101,28 @@ $aksname="playeconomyakscluster"
 $AKS_OIDC_ISSUER=az aks show -n $aksname -g $appname --query "oidcIssuerProfile.issuerUrl" -otsv
 
 az identity federated-credential create --name $namespace --identity-name $namespace --resource-group $appname --issuer $AKS_OIDC_ISSUER --subject system:serviceaccount:"${namespace}":"${namespace}-serviceaccount"
+```
+
+## Install Helm Chart
+```powershell
+helm install playcatalog-svc .\helm -f .\helm\values.yaml -n $namespace
+```
+
+## Install Helm Chart from Container Registery
+```powershell
+
+$helmUser=[guid]::Empty.Guid
+$helmPassword=az acr login --name $acrname --expose-token --query accessToken -o tsv
+
+helm registry login "$acrname.azurecr.io" --username $helmUser --password $helmPassword
+
+$hemlChartVersion="0.1.0"
+
+helm upgrade --install playcatalog-svc oci://$acrname.azurecr.io/helm/microservice --version $hemlChartVersion -f .\helm\values.yaml -n $namespace
+
+# if failed add --debug to see more info
+helm upgrade --install playcatalog-svc oci://$acrname.azurecr.io/helm/microservice --version $hemlChartVersion -f .\helm\values.yaml -n $namespace --debug
+
+# to make sure helm Charts cash updated
+helm repo update
 ```
