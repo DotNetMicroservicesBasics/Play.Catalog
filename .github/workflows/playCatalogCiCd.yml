@@ -111,4 +111,4 @@ jobs:
         -n ${{env.SVC_NAME}} \
         --set image.tag=${{needs.generate-version.outputs.new_version}} \
         --wait
-        
+      
