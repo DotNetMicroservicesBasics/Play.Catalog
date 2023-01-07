@@ -57,7 +57,7 @@ kubectl apply -f .\kubernetes\catalog.yaml -n $namespace
 kubectl get pods -n $namespace -w
 
 # output pod logs
-$podname="playcatalog-deployement-6fb5b7b855-kvkxj"
+$podname="playcatalog-deployement-5866cf49f6-ps2zx"
 kubectl logs $podname -n $namespace
 
 # list pod details
@@ -131,4 +131,7 @@ helm repo update
 ```powershell
 NUGET_READ_PAT: Created in GitHub user profile --> Settings --> Developer settings --> Personal access token
 NUGET_WRITE_PAT: Created in GitHub user profile --> Settings --> Developer settings --> Personal access token
+AZURE_CLIENT_ID
+AZURE_TENANT_ID
+AZURE_SUBSCRIPTION_ID
 ```
