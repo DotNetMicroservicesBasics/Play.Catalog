@@ -5,6 +5,7 @@ using Play.Common.Configuration;
 using Play.Common.Data;
 using Play.Common.HealthChecks;
 using Play.Common.Identity;
+using Play.Common.Logging;
 using Play.Common.MassTansit;
 using Play.Common.Settings;
 
@@ -16,10 +17,7 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        if (builder.Environment.IsProduction())
-        {
-            builder.Configuration.ConfigureAzureKeyVault();
-        }
+        builder.ConfigureAzureKeyVault();
 
         var allowedOriginSettingsKey = "AllowedOrigins";
 
@@ -27,6 +25,7 @@ public class Program
 
         // Add services to the container
 
+        builder.Services.AddSeqLogging(builder.Configuration);
 
         builder.Services.AddMongoDb()
                         .AddMongoRepository<Item>("Items");
