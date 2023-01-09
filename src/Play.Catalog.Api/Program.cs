@@ -6,6 +6,7 @@ using Play.Common.HealthChecks;
 using Play.Common.Identity;
 using Play.Common.Logging;
 using Play.Common.MassTansit;
+using Play.Common.OpenTelemetry;
 using Play.Common.Settings;
 
 namespace Play.Catalog.Api;
@@ -24,7 +25,8 @@ public class Program
 
         // Add services to the container
 
-        builder.Services.AddSeqLogging(builder.Configuration);
+        builder.Services.AddSeqLogging(builder.Configuration)
+                        .AddTracing(builder.Configuration);          
 
         builder.Services.AddMongoDb()
                         .AddMongoRepository<Item>("Items");
