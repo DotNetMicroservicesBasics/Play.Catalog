@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Play.Catalog.Api.Security;
 using Play.Catalog.Data.Entities;
 using Play.Common.Configuration;

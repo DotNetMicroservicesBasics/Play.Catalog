@@ -57,7 +57,7 @@ kubectl apply -f .\kubernetes\catalog.yaml -n $namespace
 kubectl get pods -n $namespace -w
 
 # output pod logs
-$podname="playcatalog-deployement-5866cf49f6-ps2zx"
+$podname="playcatalog-deployement-8465d564f6-vcjx2"
 kubectl logs $podname -n $namespace
 
 # list pod details
