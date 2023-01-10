@@ -1,3 +1,4 @@
+using System.Diagnostics.Metrics;
 using MassTransit;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -6,6 +7,7 @@ using Play.Catalog.Contracts.Dtos;
 using Play.Catalog.Data.Entities;
 using Play.Catalog.Service;
 using Play.Common.Contracts.Interfaces;
+using Play.Common.Settings;
 
 namespace Play.Catalog.Api.Controllers
 {
@@ -17,10 +19,21 @@ namespace Play.Catalog.Api.Controllers
         private readonly IRepository<Item> _itemsRepository;
         private readonly IPublishEndpoint _publishEndpoint;
 
-        public ItemsController(IRepository<Item> itemsRepository, IPublishEndpoint publishEndpoint)
+        private readonly Counter<int> _createItemCounter;
+        private readonly Counter<int> _updateItemCounter;
+        private readonly Counter<int> _deleteItemCounter;
+
+        public ItemsController(IRepository<Item> itemsRepository, IPublishEndpoint publishEndpoint, IConfiguration configuration)
         {
             _itemsRepository = itemsRepository;
             _publishEndpoint = publishEndpoint;
+
+            var serviceSettings = configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
+            var meter = new Meter(serviceSettings.ServiceName);
+            _createItemCounter = meter.CreateCounter<int>("CatalogItemCreated");
+            _updateItemCounter = meter.CreateCounter<int>("CatalogItemUpdated");
+            _deleteItemCounter = meter.CreateCounter<int>("CatalogItemDeleted");
+
         }
 
         [HttpGet]
@@ -82,6 +95,8 @@ namespace Play.Catalog.Api.Controllers
 
             await _itemsRepository.CreateAsync(createdItem);
 
+            _createItemCounter.Add(1, new KeyValuePair<string, object?>(nameof(createdItem.Id), createdItem.Id));
+
             await _publishEndpoint.Publish(new CatalogItemCreated(createdItem.Id,
                                                                     createdItem.Name,
                                                                     createdItem.Description,
@@ -106,6 +121,8 @@ namespace Play.Catalog.Api.Controllers
 
             await _itemsRepository.UpdateAsync(existingItem);
 
+            _updateItemCounter.Add(1, new KeyValuePair<string, object?>(nameof(existingItem.Id), existingItem.Id));
+
             await _publishEndpoint.Publish(new CatalogItemUpdated(existingItem.Id,
                                                                     existingItem.Name,
                                                                     existingItem.Description,
@@ -125,6 +142,8 @@ namespace Play.Catalog.Api.Controllers
             }
 
             await _itemsRepository.DeleteAsync(id);
+
+            _deleteItemCounter.Add(1, new KeyValuePair<string, object?>(nameof(existingItem.Id), existingItem.Id));
 
             await _publishEndpoint.Publish(new CatalogItemDeleted(existingItem.Id));
 
